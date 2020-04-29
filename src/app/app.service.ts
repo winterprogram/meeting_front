@@ -11,8 +11,8 @@ export class AppService {
 
   constructor(public http: HttpClient) {
   }
-  private url = 'http://localhost:3000';
-
+  // private url = 'http://localhost:3000';
+  private url = 'http://13.232.254.244/';
   public signUpFunction(data): Observable<any> {
     const params = new HttpParams()
       .set('userName', data.userName)
@@ -23,7 +23,7 @@ export class AppService {
       .set('password', data.password)
       .set('countryName', data.countryName)
       .set('isAdmin', data.isAdmin)
-      .set('countryCode',data.countryCode);
+      .set('countryCode', data.countryCode);
     return this.http.post(`${this.url}/signup`, params);
   }
 
@@ -40,14 +40,7 @@ export class AppService {
     return this.http.post(`${this.url}/forgotPassword`, params);
   }
 
-  
-  // public resetPassword(data): Observable<any> {
-  //   const params = new HttpParams()
-  //     .set('userId', data.userId)
-  //     .set('password', data.password)
-  //   return this.http.post(`${this.url}/resetPassword`, params);
-  // }
-  
+
   public getAllCountryPhoneFromJson(): Observable<any> {
     const data = this.http.get('../assets/data.json');
     return data;
@@ -80,8 +73,8 @@ export class AppService {
   public getSingleUser(userId): Observable<any> {
     return this.http.get(`${this.url}/view/${userId}?authToken=${Cookie.get('authToken')}`)
   }
-  
-  
+
+
 
   public createMeeting(data): Observable<any> {
     const params = new HttpParams()
@@ -94,8 +87,8 @@ export class AppService {
       .set('createdFor', data.createdFor)
       .set('createdForEmail', data.createdForEmail)
       .set('authToken', data.authToken)
-      .set('location',data.location)
-      .set('purpose',data.purpose)
+      .set('location', data.location)
+      .set('purpose', data.purpose)
     return this.http.post(`${this.url}/createMeeting`, params)
   }
 
@@ -112,8 +105,8 @@ export class AppService {
       .set('title', data.title)
       .set('startDate', data.startDate)
       .set('endDate', data.endDate)
-      .set('location',data.location)
-      .set('purpose',data.purpose)
+      .set('location', data.location)
+      .set('purpose', data.purpose)
       .set('authToken', data.authToken)
     return this.http.put(`${this.url}/updateMeeting/${data.meetingId}`, params)
   }
