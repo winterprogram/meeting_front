@@ -12,7 +12,7 @@ export class AppService {
   constructor(public http: HttpClient) {
   }
   // private url = 'http://localhost:3000';
-  private url = 'http://13.232.254.244/';
+  private url = 'http://13.233.86.6';
   public signUpFunction(data): Observable<any> {
     const params = new HttpParams()
       .set('userName', data.userName)
