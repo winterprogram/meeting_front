@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+ 
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+  background-color: violet;
+}
+
+.pd {
+  padding-bottom: 1rem;
+}
+
+.modal-body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.padding {
+  padding-right: 13px;
+}
+
+.container-fluid {
+  margin-top: 1rem;
+}
