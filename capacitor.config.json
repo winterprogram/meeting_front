@@ -1,0 +1,8 @@
+{
+  "appId": "com.test11.app",
+  "appName": "Meetup App",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "./dist/mettingapp/",
+  "cordova": {}
+}

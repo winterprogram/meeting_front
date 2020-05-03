@@ -56,15 +56,6 @@ export class CreateMeetingComponent implements OnInit {
   }
  
 
- 
-
-  // public displaySelectedUser(user) {
-  //   console.log(user)
-  //   this.createdFor = user
-  //   console.log(this.createdFor);
-  //   this.toastr.info(`You have selected meeting with ${user.firstName} ${user.lastName}`)
-  // }
-
   public comparingDates(startDate: any, endDate: any): boolean {
     let start = new Date(startDate);
     let end = new Date(endDate);
@@ -111,11 +102,11 @@ export class CreateMeetingComponent implements OnInit {
     
   }
 
-  public createMeeting(): any {
+  public meetingcreate(): any {
     if (!this.startDate) {
-      this.toastr.warning('Choose the Start Date for Meeting')
+      this.toastr.warning('Select the Start Date for Meeting')
     } else if (!this.endDate) {
-      this.toastr.warning('Choose the End Date for Meeting')
+      this.toastr.warning('Select the End Date for Meeting')
     } else if (!this.title) {
       this.toastr.warning('Title of Meeting is Missing')
     } else if (!this.createdFor) {
@@ -145,7 +136,7 @@ export class CreateMeetingComponent implements OnInit {
         purpose:this.purpose
       }
       // console.log(data)
-      this.appService.createMeeting(data)
+      this.appService.meetingcreate(data)
         .subscribe((apiResponse) => {
           if (apiResponse.status === 200) {
             this.toastr.success('meeting created')

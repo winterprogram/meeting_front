@@ -29,7 +29,7 @@ import { Cookie } from 'ng2-cookies/ng2-cookies';
   templateUrl: './normal-user-dashboard.component.html',
   styleUrls: ['./normal-user-dashboard.component.css']
 })
-export class NormalUserDashboardComponent implements OnInit {
+export class NormalUserDashboardComponent implements  OnInit {
 
   public title: String;
   public createdForName: String;
@@ -65,7 +65,7 @@ export class NormalUserDashboardComponent implements OnInit {
       this.meetingReminder()
     }, 5000)
   }
-
+  // ngAfterViewChecked(){
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
   view: CalendarView = CalendarView.Month;
   CalendarView = CalendarView;
@@ -133,6 +133,7 @@ export class NormalUserDashboardComponent implements OnInit {
         .subscribe((data) => {
           if (data.status === 200) {
             this.meetings = data.data
+            console.log(this.meetings)
             for (let event of this.meetings) {
               event.title = event.title
               event.start = new Date(event.startDate)

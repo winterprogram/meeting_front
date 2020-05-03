@@ -11,8 +11,8 @@ export class AppService {
 
   constructor(public http: HttpClient) {
   }
-  // private url = 'http://localhost:3000';
-  private url = 'http://15.206.28.103';
+   private url = 'http://localhost:3000';
+  // private url = 'http://15.206.28.103';
   public signUpFunction(data): Observable<any> {
     const params = new HttpParams()
       .set('userName', data.userName)
@@ -76,7 +76,8 @@ export class AppService {
 
 
 
-  public createMeeting(data): Observable<any> {
+  public meetingcreate
+  (data): Observable<any> {
     const params = new HttpParams()
       .set('title', data.title)
       .set('startDate', data.startDate)
@@ -89,15 +90,15 @@ export class AppService {
       .set('authToken', data.authToken)
       .set('location', data.location)
       .set('purpose', data.purpose)
-    return this.http.post(`${this.url}/createMeeting`, params)
+    return this.http.post(`${this.url}/meetingcreate`, params)
   }
 
   public getAllMeetings(userId, authToken): Observable<any> {
-    return this.http.get(`${this.url}/allMeetings/${userId}?authToken=${authToken}`)
+    return this.http.get(`${this.url}/fetchallmeetings/${userId}?authToken=${authToken}`)
   }
 
   public getSelectedUserMeetings(createdById, createdFor, authToken): Observable<any> {
-    return this.http.get(`${this.url}/getSelectedUserMeetings?createdById=${createdById}&createdFor=${createdFor}&authToken=${authToken}`)
+    return this.http.get(`${this.url}/fetchmeetingbyuser?createdById=${createdById}&createdFor=${createdFor}&authToken=${authToken}`)
   }
 
   public updateMeeting(data): Observable<any> {
@@ -108,20 +109,20 @@ export class AppService {
       .set('location', data.location)
       .set('purpose', data.purpose)
       .set('authToken', data.authToken)
-    return this.http.put(`${this.url}/updateMeeting/${data.meetingId}`, params)
+    return this.http.put(`${this.url}/updateusermeeting/${data.meetingId}`, params)
   }
 
   public getSingleMeetingDetails(meetingId, authToken): Observable<any> {
-    return this.http.get(`${this.url}/getSingleMeeting/${meetingId}?authToken=${authToken}`)
+    return this.http.get(`${this.url}/selectmeeting/${meetingId}?authToken=${authToken}`)
   }
 
   public getNormalUserMeetings(meetingId): Observable<any> {
-    return this.http.get(`${this.url}/getNormalMeetings/${meetingId}?authToken=${Cookie.get('authToken')}`)
+    return this.http.get(`${this.url}/getmeetingbyuser/${meetingId}?authToken=${Cookie.get('authToken')}`)
   }
 
   public deleteMeeting(meetingId, authToken): Observable<any> {
     const params = new HttpParams()
       .set('authToken', authToken)
-    return this.http.post(`${this.url}/deleteMeeting/${meetingId}`, params)
+    return this.http.post(`${this.url}/deletemeetingforuser/${meetingId}`, params)
   }
 }

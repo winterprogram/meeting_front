@@ -110,7 +110,7 @@ export class UpdateMeetingComponent implements OnInit {
         
         if (data.status === 200) {
           this.meetings = data.data
-          // console.log(this.meetings)
+           console.log(this.meetings)
           this.toastr.success('Meeting Found')
           this.title = this.meetings.title
           this.createdBy = this.meetings.createdBy

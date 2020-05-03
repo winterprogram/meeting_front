@@ -9,7 +9,8 @@ import { Observable } from 'rxjs';
 export class SocketService {
 
   public socket;
-  public url = 'http://15.206.28.103';
+  // public url = 'http://15.206.28.103';
+  private url = 'http://localhost:3000';
 
   constructor(public http: HttpClient) {
     this.socket = io(this.url);
