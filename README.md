@@ -102,9 +102,9 @@ Capacitor invoke Native SDKs on iOS, Android, and the Web with one code base. Op
 
 In this case will use Capacitor as it very well optimized for web app framework in our case Angular. 
 
-## To run iOS and Android app in our local system
+### To run iOS and Android app in our local system
 
-### Step - 1 
+#### Step - 1 
 
 To install capacitor
 
@@ -112,7 +112,7 @@ To install capacitor
 npm install --save @capacitor/core @capacitor/cli
 ```
 
-### Step -2 
+#### Step -2 
 
 To initialize Capacitor with your app information.(Ignore this step as capacitor.config.json is already configured by author)
 
@@ -121,15 +121,15 @@ npx cap init
 ```
 Note :- npx is a new utility available in npm 5 or above that executes local binaries/scripts to avoid global installs
 
-### Step - 3 
+#### Step - 3 
 
 Install [Android Studio](https://developer.android.com/studio)
 
 Install [Xcode](https://developer.apple.com/xcode/)
 
-### Step - 4
+#### Step - 4
 
-To run android app using Android studio, run below command in Visual studio code it will compile android code and open Android studio automatically then AVD to test app the app. 
+To run android app using Android studio, run below command in Visual studio code it will compile android code and open Android studio automatically then AVD to test app. 
 
 ```
 npx cap open android
