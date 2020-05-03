@@ -11,8 +11,8 @@ export class AppService {
 
   constructor(public http: HttpClient) {
   }
-   private url = 'http://localhost:3000';
-  // private url = 'http://15.206.28.103';
+  //  private url = 'http://localhost:3000';
+  private url = 'http://15.206.28.103';
   public signUpFunction(data): Observable<any> {
     const params = new HttpParams()
       .set('userName', data.userName)
